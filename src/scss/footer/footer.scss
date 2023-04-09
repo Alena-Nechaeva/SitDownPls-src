@@ -1,0 +1,154 @@
+@import '../common/variables';
+@import '../common/mixins';
+
+.footer {
+  padding-top: 70px;
+}
+
+.footer__top {
+  padding: 24px 0;
+  background-color: $grey-middle;
+}
+
+.footer-container {
+  @extend %flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.footer__logo {
+  display: inline-block;
+  margin-bottom: 28px;
+}
+
+.footer__soc,
+.footer__left {
+  @extend %list-reset;
+  @extend %flex;
+
+  flex-wrap: wrap;
+}
+
+.footer__list {
+  @extend %list-reset;
+}
+
+.footer-list-title {
+  padding-top: 2px;
+  margin: 0;
+  margin-bottom: 6px;
+  font-size: $font-size-m;
+  font-weight: 400;
+  line-height: 100%;
+}
+
+.social__item {
+  transition: background-color 0.3s ease-in-out;
+  @include ui-social;
+}
+
+.social__link {
+  display: flex;
+
+  svg {
+    width: 30px;
+    height: 30px;
+    fill: $grey;
+    transition: fill 0.3s ease-in-out;
+  }
+}
+
+.footer__soc {
+  max-width: 182px;
+  gap: 20px;
+}
+
+.footer__left {
+  width: 66%;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer__list-item {
+  margin-bottom: 5px;
+}
+
+.footer__link {
+  color: $grey;
+  font-size: $font-size-s;
+  line-height: 100%;
+
+  @include ui-text-menu ($primary-shade, $primary, $primary-shade, $pink-violet);
+}
+
+.footer__bottom {
+  color: $grey;
+  font-size: $font-size-s;
+  line-height: 19px;
+  text-align: center;
+}
+
+@media (max-width: 1300px) {
+  .footer-container {
+    justify-content: flex-start;
+    gap: 32px;
+  }
+
+  .footer__left {
+    width: 77%;
+  }
+}
+
+@media (max-width: 992px) {
+  .footer-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 24px;
+  }
+
+  .footer__right {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer__logo {
+    margin: 0;
+  }
+
+  .footer__left {
+    width: 100%;
+  }
+}
+
+@media (max-width: 710px) {
+  .footer__right {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .footer__left {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: max-content;
+    justify-items: center;
+    row-gap: 20px;
+  }
+
+  .footer__services,
+  .footer__about,
+  .footer__cont,
+  .footer__partner {
+    max-width: 134px;
+  }
+}
+
+@media (max-width: 320px) {
+  .footer__left {
+    gap: 16px 20px;
+    justify-items: start;
+  }
+}

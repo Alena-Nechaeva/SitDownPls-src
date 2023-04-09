@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/common/head.html', {
+"title": "SitDownPls-Catalog"
+})
+
+<body>
+  @@include('html/common/header.html', {})
+  <main>
+    <div class="container">
+      <h1 class="visually-hidden">Купить мебель, диваны, стулья, кровать, стол, комод, мебель пермиум</h1>
+      <nav class="breadcrumbs">
+        <ul class="breadcrumbs__list">
+          <li class="breadcrumbs__item">
+            <a href="index.html" class="breadcrumbs__link">Главная</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <a href="#" class="breadcrumbs__link">Каталог</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <a href="#" class="breadcrumbs__link">Диваны</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <a href="#" class="breadcrumbs__link">Прямые диваны</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="catalog-main-container">
+        @@include('html/catalog/filters.html', {})
+        @@include('html/catalog/sofas.html', {})
+      </div>
+    </div>
+  </main>
+  @@include('html/common/footer.html', {})
+  <script src="libs/js/choices.min.js"></script>
+  <script src="libs/js/swiper.min.js"></script>
+  <script src="libs/js/nouislider.min.js"></script>
+  <script src="js/header.min.js"></script>
+  <script src="js/catalog.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+@import "variables";
+
+%title {
+  margin: 0;
+  font-size: $font-size-xl;
+  font-weight: 400;
+  line-height: 100%;
+}
+
+%list-reset {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+%btn-reset {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+%btn-catalog {
+  padding: 18px 33px;
+  border: 2px solid $primary;
+  border-radius: 10px;
+  background-color: transparent;
+  color: $primary;
+  cursor: pointer;
+  font-family: "OpenSans", sans-serif;
+  font-size: $font-size-m;
+  font-weight: 600;
+  line-height: 16px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+%btn-general {
+  padding: 22px 0;
+  border: 2px solid $primary;
+  border-radius: 10px;
+  background-color: $primary;
+  color: $white;
+  cursor: pointer;
+  font-family: "OpenSans", sans-serif;
+  font-size: $font-size-m;
+  font-weight: 700;
+  line-height: 16px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+%flex {
+  display: flex;
+  align-items: center;
+}
+
+%card-title {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: $font-size-l;
+  font-weight: 400;
+  line-height: 31px;
+}

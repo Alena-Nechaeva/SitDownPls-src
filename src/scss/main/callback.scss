@@ -1,0 +1,216 @@
+@import "../common/variables";
+@import "../common/mixins";
+
+.callback {
+  padding-top: 72px;
+}
+
+.callback-container {
+  background: url("../img/callback-form/1920clb.png") no-repeat right 17px center;
+}
+
+.callback__title {
+  @extend %title;
+
+  margin-bottom: 9px;
+}
+
+.callback__descr {
+  width: 49%;
+  margin: 0;
+  margin-bottom: 16px;
+  font-size: $font-size-s;
+  line-height: 19px;
+}
+
+.callback__descr-btn {
+  @extend %btn-reset;
+
+  // position: relative;
+  // top: 3px;
+  width: 14px;
+  height: 14px;
+  background-image: url('../img/svg/tooltip.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.3s ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-image: url('../img/svg/tooltip-ui.svg');
+  }
+}
+
+.form-wrap {
+  width: 49%;
+  padding: 0;
+  border: none;
+  margin: 0;
+  margin-right: 32px;
+}
+
+.callback__form {
+  @extend %flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.clbf__label {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  outline: 2px solid transparent;
+  transition: outline 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+  @include ui-callback-form;
+}
+
+.clbf__inp {
+  width: 100%;
+  padding: 7px 18px;
+  border: none;
+  border-radius: 10px;
+  background-color: $grey-light;
+  font-size: $font-size-m;
+  line-height: 250%;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.clbf__inp::placeholder {
+  color: $grey;
+  font-size: $font-size-m;
+  line-height: 250%;
+}
+
+.clbf__btn {
+  @extend %btn-general;
+
+  padding: 17px 32px;
+  margin-bottom: 12px;
+
+  @include ui-btn-general;
+}
+
+.agreement-link {
+  color: $primary;
+  font-size: $font-size-s;
+  line-height: 19px;
+  text-decoration: underline;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+  @include ui-region;
+}
+
+.check {
+  position: relative;
+  padding-left: 22px;
+  cursor: pointer;
+  font-size: $font-size-s;
+  line-height: 19px;
+  white-space: nowrap;
+}
+
+.check__inp {
+  position: absolute;
+  -webkit-appearance: none;
+  appearance: none;
+  // /* width: 1px; */
+  // /* height: 1px; */
+  /* overflow: hidden; */
+  /* clip: rect(0 0 0 0); */
+
+  @include ui-checkbox;
+}
+
+.check__box {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border: 1px solid $grey;
+  border-radius: 2px;
+  transform: translateY(-50%);
+  transition: border-color 0.3s ease-in-out;
+}
+
+.check__box.invalid {
+  border: 2px solid $red-input;
+}
+
+.check:hover .check__box {
+  border: 1px solid $primary;
+}
+
+.clbf__label.valid {
+  background-color: $grey-light;
+  outline: 1px solid $green-input;
+}
+
+.clbf__label.invalid {
+  position: relative;
+  background-color: $grey-light;
+  outline: 1px solid $red-input;
+
+  @include invalid;
+}
+
+@media (max-width: 1300px) {
+  .callback {
+    padding-top: 70px;
+  }
+
+  .callback__descr {
+    width: 40%;
+  }
+
+  .callback-container {
+    background: url("../img/callback-form/1024clb.png") no-repeat right 37px center;
+  }
+
+  .form-wrap {
+    width: 43%;
+  }
+}
+
+@media (max-width: 992px) {
+  .callback-container {
+    background: url("../img/callback-form/768clb.png") no-repeat right 73px center / contain;
+  }
+
+  .callback__descr {
+    width: 65%;
+  }
+
+  .form-wrap {
+    width: 65%;
+  }
+}
+
+@media (max-width: 710px) {
+  .callback {
+    padding-top: 70px;
+  }
+
+  .callback-container {
+    background-image: url("../img/callback-form/Noneclb.png");
+  }
+
+  .callback__title {
+    font-size: $font-size-l;
+  }
+
+  .callback__descr {
+    width: 100%;
+  }
+
+  .form-wrap {
+    width: 100%;
+  }
+
+  .check,
+  .agreement-link {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

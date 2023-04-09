@@ -1,0 +1,148 @@
+@import '../common/variables';
+
+.hero {
+  padding-top: 33px;
+}
+
+.hero__swiper {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.hero__slide {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@for $i from 1 through 3 {
+  .hs#{$i} {
+    background-image: url('../img/hero/1920hero-#{$i}.png');
+  }
+}
+
+.hs__content {
+  max-width: 496px;
+  min-height: 400px;
+  padding: 80px 0;
+}
+
+.hs__title {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 46px;
+  color: $grey;
+  font-size: 48px;
+  line-height: 65px;
+}
+
+.hs__btn {
+  @extend %btn-reset;
+  @extend %btn-general;
+  padding: 22px 47px;
+
+  @include ui-btn-general;
+}
+
+.hs1__btn {
+  padding: 22px 50px;
+}
+
+.hs3__content {
+  max-width: 587px;
+}
+
+.hs3__title {
+  color: $white;
+}
+
+.hero .swiper-horizontal>.swiper-pagination-bullets {
+  bottom: 6%;
+}
+
+.hero__swiper-pagination {
+  position: absolute;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+
+  span {
+    width: 14px;
+    height: 14px;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $black;
+  }
+}
+
+@media (max-width: 1300px) {
+  @for $i from 1 through 3 {
+    .hs#{$i} {
+      background-image: url('../img/hero/1024hero-#{$i}.png');
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  @for $i from 1 through 3 {
+    .hs#{$i} {
+      background-image: url('../img/hero/768hero-#{$i}.png');
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .hs__content {
+    display: flex;
+    min-height: 290px + 160px;
+    flex-direction: column;
+  }
+
+  .hs__title {
+    margin-bottom: auto;
+    font-size: 42px;
+    line-height: 52px;
+  }
+
+  .hs__btn {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 355px) {
+  .hero__slide {
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 100% 70%;
+  }
+
+  @for $i from 1 through 3 {
+    .hs#{$i} {
+      background-image: url('../img/hero/320hero-#{$i}.png');
+    }
+  }
+
+  .hs__content {
+    max-width: 100%;
+    min-height: 302px;
+    padding: 30px 0 0;
+  }
+
+  .hs__title {
+    max-width: 220px;
+    padding-left: 17px;
+    font-size: 20px;
+    line-height: 27px;
+  }
+
+  .hs__btn {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .hero .swiper-horizontal>.swiper-pagination-bullets {
+    bottom: 34%;
+  }
+}

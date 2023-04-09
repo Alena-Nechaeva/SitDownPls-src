@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/common/head.html', {
+"title": "SitDownPls"
+})
+
+<body>
+  @@include('html/common/header.html', {})
+  <main>
+    <h1 class="visually-hidden">Купить мебель, диваны, стулья, кровать, стол, комод, мебель пермиум</h1>
+    @@include('html/main/hero.html', {})
+    @@include('html/main/offers.html', {})
+    @@include('html/main/high-rating.html', {})
+    @@include('html/main/new-collection.html', {})
+    @@include('html/main/top-cat.html', {})
+    @@include('html/main/useful.html', {})
+    @@include('html/main/callback.html', {})
+  </main>
+  @@include('html/common/footer.html', {})
+  <script src="libs/js/choices.min.js"></script>
+  <script src="libs/js/swiper.min.js"></script>
+  <script defer src="libs/js/popper.min.js"></script>
+  <script defer src="libs/js/tippy-bundle.umd.js"></script>
+  <script defer src="libs/js/inputmask.min.js"></script>
+  <script src="js/header.min.js"></script>
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>

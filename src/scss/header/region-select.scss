@@ -1,0 +1,86 @@
+@import '../common/variables';
+
+.region__select.choices[data-type*="select-one"]::after {
+  z-index: 30;
+  top: 8px;
+  right: 5px;
+  width: 4px;
+  height: 4px;
+  padding: 4px;
+  border-top: none;
+  border-right: 1px solid $primary;
+  border-bottom: 1px solid $primary;
+  border-left: none;
+  margin-left: 5px;
+  transform: rotate(45deg);
+  transform-origin: center;
+  transition: transform 0.2s linear, background-color 0.3s ease-in-out;
+}
+
+.region__select .choices__inner {
+  position: relative;
+  min-height: 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: transparent;
+  font-size: $font-size-m;
+  line-height: 19px;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.region__select:hover .choices__inner {
+  color: $primary-light;
+}
+
+.region__select:active .choices__inner {
+  color: $primary-shade;
+}
+
+.region__select .choices__list--dropdown .choices__list,
+.region__select .choices__list[aria-expanded] .choices__list {
+  overflow: hidden;
+}
+
+.region__select.choices[data-type*="select-one"] .choices__inner {
+  width: 85px;
+  padding: 0 5px;
+}
+
+.region__select .choices__list--single {
+  padding: 0;
+}
+
+
+.region__select.choices[data-type*="select-one"].is-open::after {
+  margin-top: 0;
+  transform: rotate(-135deg);
+}
+
+.region__select:focus:not(:hover) .choices__inner {
+  background-color: $pink-violet;
+}
+
+.region__select .choices__list.choices__list--dropdown.is-active {
+  z-index: 65;
+  width: 100%;
+  padding: 10px 10px 5px;
+  border: 2px solid $grey-light;
+  background-color: $white;
+  color: $black;
+}
+
+.region__select .choices__item {
+  white-space: nowrap;
+}
+
+.region__select .choices__list--dropdown .choices__item,
+.region__select .choices__list[aria-expanded] .choices__item {
+  display: inline-block;
+  width: max-content;
+  padding: 0;
+  margin-bottom: 11px;
+}
+
+.region__select.choices .choices__list .choices__item.is-selected {
+  display: none;
+}

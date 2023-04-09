@@ -1,0 +1,446 @@
+@import "variables";
+
+@mixin ui-text-menu($focus-color, $hover-color, $active-color, $bg) {
+  position: relative;
+  z-index: 5;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: transparent;
+    color: $hover-color;
+  }
+
+  &:hover svg {
+    fill: $hover-color;
+  }
+
+  &:active {
+    background-color: transparent;
+    color: $active-color;
+  }
+
+  &:active svg {
+    fill: $active-color;
+  }
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    top: -3px;
+    right: -10px;
+    bottom: -3px;
+    left: -10px;
+    background-color: $bg;
+    content: '';
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:focus:not(:hover) {
+    color: $focus-color;
+  }
+
+  &:focus:not(:hover):not(:active)::before {
+    transform: scaleX(1);
+  }
+
+  &:focus:not(:hover) svg {
+    fill: $focus-color;
+  }
+}
+
+@mixin ui-region {
+  &:hover {
+    color: $primary-light;
+  }
+
+  &:active {
+    color: $primary-shade;
+  }
+
+  &:focus:not(:hover) {
+    background-color: $pink-violet;
+    color: $primary-shade;
+  }
+}
+
+@mixin arrow-circle {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid $primary;
+  border-radius: 100%;
+  background-color: transparent;
+  cursor: pointer;
+  transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+  &::before {
+    padding: 4px;
+    border-right: 2px solid $primary;
+    border-bottom: 2px solid $primary;
+    content: "";
+    transform: rotate(-45deg) translate(-1px, -1px);
+    transition: border-color 0.3s ease-in-out;
+  }
+}
+
+@mixin ui-arrow-circle {
+  &:hover:not(:disabled) {
+    background-color: $primary;
+  }
+
+  &:active:not(:disabled) {
+    border-color: $primary-shade;
+    background-color: $primary-shade;
+  }
+
+  &:focus:not(:hover):not(:disabled) {
+    border-color: $primary;
+    background-color: $primary-light;
+  }
+
+  &:focus::before {
+    border-color: $white;
+  }
+
+  &:hover::before {
+    border-color: $white;
+  }
+
+  &:active:before {
+    border-color: $white;
+  }
+}
+
+@mixin ui-search {
+  &:hover {
+    background-color: $grey-middle;
+  }
+
+  &:hover .search__input {
+    background-color: $grey-middle;
+  }
+
+  &:focus-within {
+    border: none;
+    background-color: $pink-light;
+    outline: 2px solid $primary;
+    outline-offset: -2px;
+  }
+
+  &:focus-within .search__input {
+    background-color: $pink-light;
+  }
+
+  &:focus-within .search__icon svg {
+    fill: $primary;
+  }
+
+  &:active {
+    background-color: $grey-light;
+  }
+
+  &:active .search__input {
+    background-color: $grey-light;
+  }
+
+  &:active .search__icon svg {
+    fill: $primary;
+  }
+}
+
+@mixin ui-svg {
+  transition: background-color 0.3s ease-in-out;
+
+  svg {
+    transition: fill 0.3s ease-in-out;
+  }
+
+  &:hover svg {
+    fill: $primary-light;
+  }
+
+  &:active svg {
+    fill: $primary-shade;
+  }
+
+  &:focus:not(:hover) {
+    background-color: $primary-light;
+  }
+
+  &:focus:not(:hover) svg {
+    fill: $white;
+  }
+}
+
+@mixin ui-btn-catalog {
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $primary;
+    color: $white;
+  }
+
+  &:focus {
+    border-color: $primary;
+    background-color: $primary-light;
+    color: $white;
+  }
+
+  &:active {
+    border-color: $primary-shade;
+    background-color: $primary-shade;
+    color: $white;
+  }
+}
+
+@mixin ui-btn-general {
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+  &:hover {
+    border-color: $primary-light;
+    background-color: $primary-light;
+  }
+
+  &:focus {
+    border-color: $primary-shade;
+    background-color: $primary-light;
+  }
+
+  &:active {
+    border-color: $primary-shade;
+    background-color: $primary-shade;
+  }
+}
+
+@mixin arrow-circle-tocatalog {
+  position: relative;
+  display: inline-block;
+  padding: 9px;
+  border: 2px solid $primary;
+  border-radius: 100%;
+  background-color: transparent;
+  cursor: pointer;
+  transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+  &::before {
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    padding: 3px;
+    border-right: 2px solid $primary;
+    border-bottom: 2px solid $primary;
+    content: "";
+    transform: rotate(-45deg);
+    transition: border-color 0.3s ease-in-out;
+  }
+}
+
+@mixin ui-tocatalog {
+  &__txt:before {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: $primary;
+    content: '';
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+
+  &:hover &__txt::before {
+    transform: scaleX(1);
+  }
+
+  &:hover &__arrow {
+    background-color: $primary;
+  }
+
+  &:hover &__arrow::before {
+    border-color: $white;
+  }
+
+  &:focus &__txt::before {
+    transform: scaleX(1);
+  }
+
+  &:focus &__arrow {
+    border-color: $primary;
+    background-color: $primary-light;
+  }
+
+  &:focus &__arrow::before {
+    border-color: $white;
+  }
+
+  &:active &__txt {
+    color: $primary-shade;
+  }
+
+  &:active &__txt::before {
+    background-color: $primary-shade;
+    transform: scaleX(1);
+  }
+
+  &:active &__arrow {
+    border-color: $primary-shade;
+    background-color: $primary-shade;
+  }
+
+  &:active &__arrow::before {
+    border-color: $white;
+  }
+}
+
+
+@mixin ui-checkbox {
+  &:checked+.check__box {
+    border: none;
+    background-image: url('../img/svg/check-box-checked.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &:focus+.check__box {
+    border: 1px solid $primary;
+    background-color: $primary-light;
+  }
+
+  &:focus:checked+.check__box {
+    border: none;
+    background-image: url('../img/svg/check-box-checked.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+@mixin ui-checkbox-filters {
+  &:checked+.filters__check-box {
+    border: none;
+    background-image: url('../img/svg/check-box-filters.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &:focus+.filters__check-box {
+    border: 1px solid $primary;
+    background-color: $primary-light;
+  }
+
+  &:focus:checked+.filters__check-box {
+    border: none;
+    background-image: url('../img/svg/check-box-filters.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+@mixin ui-social {
+  &:focus-within:not(:active) {
+    background-color: $primary-light;
+  }
+
+  &:focus-within svg {
+    fill: $grey-middle;
+  }
+
+  &:hover svg {
+    fill: $primary;
+  }
+
+  &:active svg {
+    fill: $primary-shade;
+  }
+}
+
+@mixin ui-callback-form {
+  &:hover input {
+    background-color: $grey-middle;
+    outline: 2px solid transparent;
+  }
+
+  &:focus-within {
+    outline: 2px solid $primary;
+  }
+
+  &:focus-within input {
+    background-color: $pink-light;
+  }
+}
+
+@mixin slash {
+  &::after {
+    position: absolute;
+    right: -10px;
+    bottom: 0;
+    color: $grey;
+    content: '/';
+  }
+}
+
+@mixin ui-inp-price {
+  transition: outline-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+  &:hover {
+    outline-color: $primary;
+  }
+
+  &:focus {
+    background-color: $pink-violet;
+    outline-color: $primary;
+  }
+
+  &:active {
+    background-color: transparent;
+    outline-color: $primary-shade;
+  }
+}
+
+@mixin mobile-filters-arrow {
+  &::before {
+    position: absolute;
+    top: 40%;
+    right: 17px;
+    padding: 3px;
+    border-right: 2px solid $primary;
+    border-bottom: 2px solid $primary;
+    content: '';
+    transform: rotate(45deg);
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  }
+}
+
+@mixin ui-mobile-filters {
+  transition: outline-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  &:hover,
+  &:focus {
+    color: $primary;
+    outline-color: $primary;
+  }
+
+  &:active {
+    color: $primary-shade;
+    outline-color: $primary-shade;
+  }
+
+  &:active::before {
+    border-color: $primary-shade;
+  }
+}
+
+@mixin invalid {
+  &::before {
+    position: absolute;
+    top: -20px;
+    left: 18px;
+    color: $red-input;
+    content: "Недопустимый формат";
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/common/head.html', {
+"title": "SitDownPl-D-31"
+})
+
+<body>
+  @@include('html/common/header.html', {})
+  <main>
+    <div class="container">
+      <h1 class="visually-hidden">Купить мебель, диваны, стулья, кровать, стол, комод, мебель пермиум</h1>
+      <nav class="breadcrumbs">
+        <ul class="breadcrumbs__list">
+          <li class="breadcrumbs__item">
+            <a href="index.html" class="breadcrumbs__link">Главная</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <a href="catalog.html" class="breadcrumbs__link">Каталог</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <a href="#" class="breadcrumbs__link">Диваны</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <a href="#" class="breadcrumbs__link">Прямые диваны</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <a href="#" class="breadcrumbs__link">D-31</a>
+          </li>
+        </ul>
+      </nav>
+      <section class="product d31">
+        <div class="product__content">
+          <div class="product__show-info">
+            @@include('html/item-d-31/product-show-swiper.html', {})
+            <div class="product__info d31__info">
+              <span class="product__rating">4,8</span>
+              <h2 class="product__title">
+                <span class="product__title-name">Диван тканевый прямой “D-31”</span>
+                <span class="product__title-minidescr">Мини 120 см без ящика Stark синий (Рогожка)</span>
+              </h2>
+              <p class="product__price">28 490 руб</p>
+              <button class="product__buy">Купить в один клик</button>
+              <button class="product__add-to-cart">+ Добавить в корзину</button>
+            </div>
+          </div>
+          @@include('html/item-d-31/d-31-descr.html', {})
+        </div>
+      </section>
+      @@include('html/item-d-31/d-31-similar-items.html', {})
+    </div>
+  </main>
+  @@include('html/common/footer.html', {})
+  <div class="swiper-for-modal">
+    @@include('html/item-d-31/product-modal-swiper.html', {})
+  </div>
+
+  <script src="libs/js/choices.min.js"></script>
+  <script src="libs/js/swiper.min.js"></script>
+  <script defer src="libs/js/inputmask.min.js"></script>
+  <script src="js/header.min.js"></script>
+  <script src="js/product-card.min.js"></script>
+</body>
+
+</html>

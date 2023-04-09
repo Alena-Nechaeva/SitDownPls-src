@@ -1,0 +1,194 @@
+@import '../common/variables';
+@import '../common/mixins';
+
+.rating {
+  padding-top: 66px;
+  margin-bottom: 70px
+}
+
+.rating__list {
+  @extend %list-reset;
+
+  display: grid;
+  margin-bottom: 30px;
+  gap: 32px;
+  grid-auto-rows: max-content;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.rating__title {
+  @extend %title;
+
+  margin-bottom: 26px;
+}
+
+.rating__item {
+  height: 100%;
+}
+
+.item-card {
+  display: flex;
+  height: 100%;
+  align-items: flex-end;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: $grey-light;
+
+  &__content {
+    display: flex;
+    width: 100%;
+    height: auto;
+    min-height: 420px - 24px;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  &__rating {
+    display: block;
+    padding-left: 20px;
+    margin-top: 30px - 12px;
+    margin-bottom: auto;
+    margin-left: 30px - 12px;
+    background: url('../img/svg/star.svg') no-repeat left center;
+    color: $secondary;
+    font-size: $font-size-m;
+    font-weight: 400;
+    line-height: 21px;
+  }
+
+  &__pic {
+    justify-self: center;
+    align-self: center;
+    margin-bottom: 16px;
+  }
+
+  &__descr {
+    padding-right: 30px - 12px;
+    padding-left: 30px - 12px;
+  }
+
+  &__title {
+    @extend %card-title;
+  }
+
+  &__name {
+    display: block;
+  }
+
+  &__model {
+    display: block;
+  }
+
+  &__price {
+    margin-bottom: 22px;
+    color: $grey;
+    font-size: $font-size-m;
+    line-height: 21px;
+  }
+
+  &__buy {
+    @extend %btn-catalog;
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 30px - 12px;
+
+    @include ui-btn-catalog;
+  }
+}
+
+.rating__show-more {
+  width: max-content;
+  margin: 0 auto;
+}
+
+.rating__item:nth-child(n+9) {
+  display: none;
+}
+
+.rating__item.is-visible {
+  display: block;
+}
+
+.show-more-btn {
+  @extend %btn-general;
+  padding-right: 35px;
+  padding-bottom: 19px;
+  padding-left: 35px;
+
+  @include ui-btn-general;
+}
+
+
+@media (max-width: 1300px) {
+  .rating__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .rating__item:nth-child(n+7) {
+    display: none;
+  }
+
+  .rating__item.is-visible {
+    display: block;
+  }
+}
+
+@media (max-width: 992px) {
+  .rating__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .rating {
+    padding-top: 72px;
+  }
+
+  .rating__list {
+    gap: 16px;
+  }
+
+  .rating__title {
+    font-size: $font-size-l;
+    line-height: 24px;
+  }
+
+  .item-card {
+    padding: 16px;
+
+    &__content {
+      min-height: 278px - 32px;
+    }
+
+    &__rating {
+      margin-top: 0;
+      margin-left: 0;
+      background: url('../img/svg/star.svg') no-repeat left center / 13px 12px;
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    &__pic {
+      margin: auto 0;
+    }
+
+    &__title {
+      margin-bottom: 16px;
+      font-size: $font-size-m;
+      line-height: 21px;
+    }
+
+    &__descr {
+      padding: 0;
+    }
+
+    &__price {
+      margin-bottom: 16px;
+    }
+
+    &__buy {
+      padding: 10px 23px;
+      margin: 0;
+    }
+  }
+}

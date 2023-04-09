@@ -1,0 +1,141 @@
+@import '../common/variables';
+@import '../common/mixins';
+
+.useful {
+  padding-top: 70px;
+}
+
+.useful__title {
+  @extend %title;
+}
+
+.useful__title-mobile {
+  display: none;
+}
+
+.useful__swiper-wrap {
+  position: relative;
+}
+
+.useful__swiper {
+  overflow: hidden;
+}
+
+.usf__art {
+  height: 100%;
+  border-radius: 10px;
+  font-size: 0;
+}
+
+.usf {
+  &__content {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  &__body {
+    display: flex;
+    min-height: 250px;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+    border-radius: 0px 0px 10px 10px;
+    background-color: $grey-light;
+  }
+
+  &__txt {
+    margin: 0;
+    margin-bottom: auto;
+    font-size: $font-size-l;
+    font-weight: 400;
+    line-height: 33px;
+  }
+
+  &__link {
+    @extend %btn-catalog;
+
+    display: inline-block;
+    align-self: flex-start;
+
+    @include ui-btn-catalog;
+  }
+}
+
+.useful-swiper-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 26px;
+}
+
+.useful-swiper-navigation__btns {
+  @extend %flex;
+
+  width: 77px;
+  justify-content: space-between;
+}
+
+.useful-btn {
+  @extend %btn-reset;
+}
+
+.useful__prev {
+  @include arrow-circle;
+
+  transform: rotate(180deg);
+
+  @include ui-arrow-circle;
+}
+
+.useful__next {
+  @include arrow-circle;
+  @include ui-arrow-circle;
+}
+
+.useful-btn:disabled {
+  border-color: $grey;
+  cursor: not-allowed;
+}
+
+.useful-btn:disabled::before {
+  border-color: $grey;
+}
+
+@media (max-width: 1300px) {
+  .usf__body {
+    min-height: 254px;
+  }
+
+  .usf__txt {
+    font-size: $font-size-m;
+    line-height: 22px;
+  }
+}
+
+@media (max-width: 576px) {
+  .useful__swiper {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .useful-swiper-navigation {
+    justify-content: center;
+    padding-top: 16px;
+    margin-bottom: 0;
+  }
+
+  .useful__title {
+    display: none;
+  }
+
+  .useful__title-mobile {
+    display: block;
+    padding-top: 8px;
+    margin: 0;
+    margin-bottom: 26px;
+    font-size: $font-size-l;
+    font-weight: 400;
+    line-height: 100%;
+  }
+}

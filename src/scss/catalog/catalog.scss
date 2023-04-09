@@ -1,0 +1,145 @@
+@import '../common/variables';
+@import '../common/mixins';
+
+.catalog-main-container {
+  display: grid;
+  padding-top: 34px;
+  column-gap: 32px;
+  grid-template-columns: minmax(auto, 296px) repeat(9, 1fr);
+  grid-template-rows: auto;
+}
+
+.breadcrumbs {
+  padding-top: 20px;
+}
+
+.breadcrumbs__list {
+  @extend %list-reset;
+  @extend %flex;
+
+  gap: 15px;
+}
+
+.breadcrumbs__item {
+  position: relative;
+}
+
+.breadcrumbs__item:not(:last-child) {
+  @include slash;
+}
+
+.breadcrumbs__link {
+  color: $grey;
+  font-size: $font-size-s;
+  line-height: 100%;
+
+  @include ui-text-menu ($primary-shade, $primary, $primary-shade, $pink-violet);
+}
+
+.breadcrumbs__item:last-child .breadcrumbs__link {
+  color: $primary-shade;
+}
+
+.catalog {
+  grid-column: span 9;
+}
+
+.catalog__title {
+  @extend %title;
+
+  margin-bottom: 28px;
+  font-size: $font-size-l;
+}
+
+.catalog__item {
+  height: 100%;
+}
+
+.catalog__swiper {
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  @extend %list-reset;
+}
+
+.catalog-swiper-pagination {
+  display: flex;
+  justify-content: center;
+  padding-top: 32px;
+}
+
+.catalog .swiper-pagination-bullet {
+  display: inline-flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid $primary;
+  border-radius: 10px;
+  background-color: transparent;
+  color: $primary;
+  font-size: $font-size-m;
+  font-weight: 600;
+  line-height: 100%;
+  opacity: 1;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.catalog .swiper-pagination-bullet-active {
+  border: 2px solid $primary-shade;
+  background-color: $primary-shade;
+  color: $white;
+}
+
+.catalog .swiper-pagination-bullet:focus {
+  background-color: $primary-light;
+  color: $white;
+}
+
+.catalog .swiper-pagination-bullet:hover {
+  background-color: $primary;
+  color: $white;
+}
+
+.catalog .swiper-pagination-bullet:active {
+  border-color: $primary-shade;
+  background-color: $primary-shade;
+  color: $white;
+}
+
+.catalog .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 8px;
+}
+
+@media (max-width: 1300px) {
+  .catalog-main-container {
+    padding-top: 34px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .catalog {
+    grid-column: span 3;
+  }
+
+  .catalog__title {
+    margin-bottom: 23px;
+  }
+}
+
+@media (max-width: 992px) {
+  .catalog__title {
+    margin-bottom: 33px;
+  }
+}
+
+
+@media(max-width: 576px) {
+  .breadcrumbs {
+    display: none;
+  }
+
+  .catalog__title {
+    margin-bottom: 22px;
+  }
+}

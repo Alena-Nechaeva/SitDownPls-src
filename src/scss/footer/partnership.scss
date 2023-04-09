@@ -1,0 +1,166 @@
+@import '../common/variables';
+
+.partners {
+  max-width: 842px;
+  padding-top: 28px;
+  color: $black;
+  font-size: $font-size-m;
+}
+
+.partners__title-main {
+  margin: 0;
+  font-size: $font-size-xl;
+  font-weight: 400;
+  line-height: 100%;
+}
+
+.partners__title {
+  padding-top: 32px;
+  margin: 0;
+  margin-bottom: 12px;
+  font-size: $font-size-l;
+  font-weight: 400;
+  line-height: 33px;
+}
+
+.partners__txt {
+  margin: 0;
+  line-height: 180%;
+}
+
+.partners__list1 {
+  @extend %list-reset;
+  max-width: 75%;
+}
+
+.plist1__item {
+  padding-left: 37px;
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+}
+
+.plist1__item .partners__txt {
+  line-height: 150%;
+}
+
+.plist1__item:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.plist1__item:first-child {
+  background-image: url('../img/svg/network.svg');
+}
+
+.plist1__item:nth-child(2) {
+  background-image: url('../img/svg/briefcase.svg');
+}
+
+.plist1__item:nth-child(3) {
+  background-image: url('../img/svg/git-pull-request.svg');
+}
+
+.partners h3 {
+  margin: 0;
+  margin-bottom: 12px;
+  color: $secondary;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.partners h3:first-of-type+.partners__txt {
+  margin-bottom: 12px;
+}
+
+.partners__guarantee {
+  @extend %list-reset;
+
+  margin-bottom: 32px;
+  counter-reset: numbering;
+
+  & li {
+    position: relative;
+    padding-left: 26px;
+    margin-bottom: 15px;
+  }
+
+  & li::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $secondary;
+    content: counter(numbering) ".";
+    counter-increment: numbering;
+    font-weight: 600;
+    line-height: 180%;
+  }
+}
+
+.guarantee__item:last-child {
+  margin-bottom: 0;
+}
+
+.guarantee-period {
+  width: 75%;
+  padding: 22px 0 22px 109px;
+  margin: 0;
+  background: url('../img/svg/pencil.svg') no-repeat left center / contain;
+  font-size: $font-size-l;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+@media (max-width: 1300px) {
+  .partners {
+    padding-top: 32px;
+  }
+}
+
+@media (max-width: 992px) {
+  .partners {
+    width: 100%;
+    max-width: 100%;
+    padding-top: 32px;
+  }
+
+  .partners__list1 {
+    max-width: 100%;
+  }
+
+  .guarantee-period {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .partners {
+    font-size: $font-size-s;
+  }
+
+  .partners__title-main {
+    font-size: $font-size-l;
+  }
+
+  .partners__title {
+    padding-top: 30px;
+    font-size: $font-size-m;
+    line-height: 22px;
+  }
+
+  .benefits-title {
+    font-size: $font-size-s;
+    line-height: 19px;
+  }
+
+  .partners__guarantee li {
+    margin-bottom: 10px;
+  }
+
+  .guarantee-period {
+    max-width: 80%;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 52px;
+    font-size: $font-size-m;
+  }
+}

@@ -1,0 +1,299 @@
+@import '../common/variables';
+@import '../common/mixins';
+
+.top-category {
+  padding-top: 70px;
+}
+
+.top-category__title {
+  @extend %title;
+
+  margin-bottom: 23px;
+}
+
+.top-category__list {
+  @extend %list-reset;
+
+  display: grid;
+  gap: 32px;
+  grid-template-areas:
+    "sofa sofa sofa armchair armchair armchair"
+    "bed bed chest chest chair chair";
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.top-category__art {
+  @extend %flex;
+  height: 100%;
+  min-height: auto;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: $grey-light;
+}
+
+.top-category__item {
+  height: 100%;
+}
+
+.top-category__item-title {
+  @extend %flex;
+  margin: 0;
+  margin-bottom: 30px;
+  font-size: $font-size-l;
+  font-weight: 400;
+  line-height: 33px;
+}
+
+.top-category__link {
+  display: inline-block;
+  margin-right: 25px;
+  margin-bottom: 14px;
+  color: $grey;
+  font-size: $font-size-s;
+  line-height: 14px;
+
+  @include ui-text-menu ($primary-shade, $primary, $primary-shade, $pink-violet);
+}
+
+.top-category__picture {
+  margin-bottom: 25px;
+  transform: translateX(-30px);
+}
+
+.top-category__link:nth-child(2) {
+  margin-right: 0;
+}
+
+.top-category__link.tc1__link2 {
+  margin-right: 25px;
+}
+
+.tc1 {
+  grid-area: sofa;
+}
+
+.tc2 {
+  grid-area: armchair;
+}
+
+.tc3 {
+  grid-area: bed;
+}
+
+.tc4 {
+  grid-area: chest;
+}
+
+.tc5 {
+  grid-area: chair;
+}
+
+.tc5__link2 {
+  padding-left: 15px;
+}
+
+.to-catalog {
+  @extend %flex;
+
+  width: max-content;
+  margin-top: auto;
+
+  @include ui-tocatalog;
+}
+
+.to-catalog__txt {
+  position: relative;
+  padding-right: 4px;
+  color: $primary;
+  font-size: $font-size-m;
+  font-weight: 700;
+  line-height: 19px;
+  transition: color 0.3s ease-in-out;
+}
+
+.to-catalog__arrow {
+  @include arrow-circle-tocatalog;
+}
+
+.top-category__title-arrow {
+  display: none;
+}
+
+@media (max-width: 1300px) {
+  .top-category__list {
+    grid-template-areas:
+      "sofa sofa bed"
+      "chest armchair chair";
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .top-category__item-title {
+    margin-bottom: 36px;
+  }
+
+  .top-category__picture {
+    margin-right: -20px;
+    margin-bottom: 30px;
+  }
+
+  .tc1__title {
+    margin-bottom: 30px;
+  }
+
+  .tc1__picture {
+    margin-bottom: 25px;
+  }
+
+  .tc3__picture {
+    margin-right: -60px;
+    margin-bottom: 30px;
+  }
+
+  .tc2__picture {
+    margin-right: -23px;
+  }
+
+  .tc5__picture {
+    margin-right: -27px;
+  }
+}
+
+@media (max-width: 1020px) and (min-width: 993px) {
+  .tc5__link2 {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .top-category__list {
+    grid-template-areas:
+      "sofa sofa"
+      "bed armchair"
+      "chest chair";
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  @for $i from 2 through 5 {
+
+    .tc#{$i}__link1,
+    .tc#{$i}__link2 {
+      display: block;
+    }
+  }
+
+  .tc5__link2 {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .top-category__title {
+    font-size: $font-size-l;
+  }
+
+  .top-category__list {
+    column-gap: 16px;
+    row-gap: 32px;
+  }
+
+  .to-catalog {
+    display: none;
+  }
+
+  .top-category__item-title {
+    position: relative;
+  }
+
+  .top-category__title-txt {
+    margin-right: 5px;
+  }
+
+  .top-category__title-arrow {
+    display: inline-block;
+    @include arrow-circle-tocatalog;
+  }
+
+  .tc5__link2 {
+    padding: 0;
+  }
+
+  .top-category__link.tc1__link1,
+  .top-category__link.tc1__link2 {
+    margin-right: 17px;
+  }
+
+  .top-category__link.tc1__link3 {
+    margin-right: 0;
+  }
+
+  .top-category__picture {
+    margin-bottom: 0;
+  }
+
+  @for $i from 2 through 5 {
+    .tc#{$i}__art {
+      padding: 16px;
+    }
+
+    .tc#{$i}__title {
+      margin-bottom: 15px;
+      font-size: $font-size-m;
+      line-height: 22px;
+    }
+
+    .tc#{$i}__picture {
+      margin-bottom: 0;
+      transform: translateX(-15px);
+    }
+
+    .tc#{$i}__link1,
+    .tc#{$i}__link2 {
+      margin-bottom: 4px;
+      font-size: 10px;
+      line-height: 10px;
+    }
+
+    .tc#{$i}__link2 {
+      margin-bottom: 8px;
+    }
+  }
+
+  .tc3__img {
+    width: 80%;
+  }
+
+  .tc4__title {
+    line-height: 17px;
+  }
+}
+
+@media (max-width: 320px) {
+  .tc4__title-arrow {
+    top: 12px;
+    left: -6px;
+  }
+
+  .top-category__picture {
+    margin-right: -30px;
+  }
+
+  .top-category__img {
+    width: 100%;
+  }
+
+  .tc1__art {
+    padding-bottom: 14px;
+  }
+
+  .tc1__title {
+    margin-bottom: 10px;
+  }
+
+  .tc1__picture {
+    margin-right: -60px;
+  }
+}

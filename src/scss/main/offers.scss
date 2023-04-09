@@ -1,0 +1,186 @@
+@import '../common/variables';
+
+.offers {
+  padding-top: 70px;
+}
+
+.offers__title {
+  @extend %title;
+}
+
+.offers__title-mobile {
+  display: none;
+}
+
+.offers__swiper-wrap {
+  position: relative;
+}
+
+.offers__swiper {
+  overflow: hidden;
+}
+
+.offers__slide {
+  height: auto;
+}
+
+.item-card__discount {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  display: block;
+  width: 92px;
+  padding: 7px 25px 7px 15px;
+  background: url('../img/svg/offer-arrow.svg') no-repeat left center / 100%;
+  color: $white;
+  font-size: $font-size-s;
+  font-weight: 700;
+  line-height: 19px;
+  text-align: center;
+}
+
+.offers__slide .item-card__title {
+  font-size: 24px;
+  line-height: 130%;
+}
+
+.offers__slide .item-card__content {
+  min-height: 455px;
+  padding: 30px - 12px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.offers__slide .item-card__descr {
+  padding: 0;
+}
+
+.item-card__price-offer {
+  color: $secondary;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.item-card__price-usual {
+  padding-left: 26px;
+  text-decoration: line-through;
+}
+
+.offers__slide .item-card__buy {
+  margin-bottom: 0;
+}
+
+.ofs5__descr,
+.ofs2__descr {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-card__descr-right {
+  align-self: flex-end;
+}
+
+.ofs1,
+.ofs3,
+.ofs4,
+.ofs6 {
+  width: 23%;
+}
+
+.ofs2,
+.ofs5 {
+  width: 49%;
+}
+
+.item-card .ofs6__model,
+.item-card .ofs6__name2 {
+  display: inline;
+}
+
+.offers-swiper-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 26px;
+}
+
+.offers-swiper-navigation__btns {
+  @extend %flex;
+
+  width: 77px;
+  justify-content: space-between;
+}
+
+.offers__btn {
+  @extend %btn-reset;
+}
+
+.offers__prev {
+  @include arrow-circle;
+
+  transform: rotate(180deg);
+
+  @include ui-arrow-circle;
+}
+
+.offers__next {
+  @include arrow-circle;
+  @include ui-arrow-circle;
+}
+
+.offers-btn:disabled {
+  border-color: $grey;
+  cursor: not-allowed;
+}
+
+.offers-btn:disabled::before {
+  border-color: $grey;
+}
+
+@media (max-width: 1300px) {
+  .offers__slide .item-card {
+    min-height: 511px;
+  }
+
+  .item-card .ofs2__pic,
+  .item-card .ofs5__pic {
+    margin: auto 0;
+  }
+
+  .item-card__descr-right {
+    display: none;
+  }
+}
+
+@media (max-width: 705px) {
+  .offers__swiper {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .offers-swiper-navigation {
+    justify-content: center;
+    padding-top: 14px;
+    margin-bottom: 0;
+  }
+
+  .offers__title {
+    display: none;
+  }
+
+  .offers__title-mobile {
+    display: block;
+    margin: 0;
+    margin-bottom: 26px;
+    font-size: $font-size-l;
+    font-weight: 400;
+    line-height: 100%;
+  }
+
+  .offers__slide .item-card__price {
+    margin-bottom: 22px;
+  }
+
+  .offers__slide .item-card__buy {
+    padding: 15px 30px;
+  }
+}

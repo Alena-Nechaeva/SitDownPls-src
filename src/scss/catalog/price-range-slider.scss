@@ -1,0 +1,60 @@
+@import '../common/variables';
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.price__range-inp {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.price__from-inp,
+.price__to-inp {
+  width: 86px;
+}
+
+.noUi-target {
+  height: 3px;
+  border: none;
+  border-radius: 3px;
+  background-color: $grey-middle;
+  box-shadow: none;
+}
+
+.noUi-connect {
+  background-color: $primary;
+}
+
+.noUi-handle::before,
+.noUi-handle::after {
+  display: none;
+}
+
+.noUi-handle {
+  border: none;
+  background-color: transparent;
+  background-image: url('../img/svg/pr-range-sl.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: none;
+  transition: background-image 0.3s ease-in-out;
+}
+
+.noUi-handle:hover {
+  background-image: url('../img/svg/pr-range-sl-hover.svg');
+}
+
+.noUi-handle:focus,
+.noUi-handle:active {
+  background-image: url('../img/svg/pr-range-sl-active.svg');
+}
