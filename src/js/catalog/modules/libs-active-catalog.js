@@ -1,4 +1,4 @@
-import { slideVisibility } from '../../common/slide-visibility.js';
+import {slideVisibility} from '../../common/slide-visibility.js';
 
 export const libsActiveCatalog = () => {
   const catalogSwiper = new Swiper('.catalog__swiper', {
@@ -8,7 +8,7 @@ export const libsActiveCatalog = () => {
     watchSlidesProgress: true,
 
     pagination: {
-      el: ".catalog-swiper__pagination",
+      el: ".catalog-swiper-pagination",
       clickable: true,
       renderBullet: function (index, className) {
         return `<span class=${className} role="button" aria-label="Перейти к слайду ${index + 1}" tabindex="0">${(index + 1)}</span>`;
@@ -60,7 +60,7 @@ export const libsActiveCatalog = () => {
     }
   })
 
-  const rangeSlider = document.querySelector('.price-range__slider');
+  const rangeSlider = document.querySelector('.price__range-slider');
   const inpPriceFrom = document.querySelector('.price__from-inp');
   const inpPriceTo = document.querySelector('.price__to-inp');
   const inputs = [inpPriceFrom, inpPriceTo];
