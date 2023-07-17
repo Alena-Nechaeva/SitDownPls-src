@@ -1,23 +1,19 @@
 # SitDownPls-src
-Верстка по макету нескольких страниц интернет магазина SitDownPls.
-Этот репозиторий содержит сборщик gulp и все исходные файлы, которые использовались в верстке сайта
-Готовый результат можно найти по ссылке https://alena-nechaeva.github.io/SitDownPls-build/
-Сайт содержит 4 страницы:
-Главная
-Каталог
-Страница товара (D-31)
-Страница сотрудничества (по ссылке "Поставщикам" в футере)
+Layout according to the layout of several pages of the online store Sit Down Pls.
+This repository contains the gulp collector and all the source files that were used in the layout of the site
+The finished result can be found at 'https://alena-nechaeva.github.io/SitDownPls-build/catalog.html'
 
-Задачи:
-Верстка сайта по макету;
-Адаптив под любые разрешения, в макете приведены разрешения 1920, 1024, 768, 320;
-Все интерактивные элементы (кнопки, ссылки) явно дают понять пользователю, что на них можно кликнуть;
-Pixel perfect вёрстка;
-БЭМ-именование классов;
-Минимум медиазапросов для адаптива;
-Валидный код;
+The site contains 4 pages:
+Main
+Catalog
+Product page (D-31)
+Cooperation page (by the link "Suppliers" in the footer)
 
-Для сборки проекта необходимо:
-скачать репозиторий
-в папке с репозиторием запустить командную строку и выполнить команду 'npm install'
-после установки необходимых модулей запустить команду 'gulp' для сборки разработчика с запуском локалього сервера. Или 'gulp prod' для конечной сборки.
+Tasks:
+Layout of the site according to the layout;
+Adaptive to any resolution, the layout shows resolutions 1920, 1024, 768, 320;
+All interactive elements (buttons, links) clearly make it clear to the user that they can be clicked on;
+Pixel perfect layout;
+BEM-naming classes;
+Minimum of media queries for adaptive;
+Valid code;
